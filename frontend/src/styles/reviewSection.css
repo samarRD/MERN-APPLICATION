@@ -1,0 +1,432 @@
+/* src/styles/reviewSection.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --text: #222;
+  --text-muted: #888;
+  --border: #eeeeee;
+  --radius: 14px;
+  --star-color: #f59e0b;
+}
+
+/* ============================================================
+   SECTION
+============================================================ */
+.rs-section {
+  font-family: "DM Sans", sans-serif;
+  padding: 0.3rem 0;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.rs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.rs-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.rs-total {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.rs-average {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.rs-average-value {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.rs-average-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ============================================================
+   ÉTOILES
+============================================================ */
+.rs-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.rs-star {
+  font-size: 1.4rem;
+  color: #ddd;
+  line-height: 1;
+  transition:
+    color 0.15s,
+    transform 0.1s;
+}
+
+.rs-star.filled {
+  color: var(--star-color);
+}
+.rs-star.interactive {
+  cursor: pointer;
+}
+.rs-star.interactive:hover {
+  transform: scale(1.2);
+}
+
+/* ============================================================
+   BOUTON ÉCRIRE
+============================================================ */
+.rs-write-btn {
+  padding: 0.65rem 1.4rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.rs-write-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fff5f5;
+}
+
+/* ============================================================
+   FORMULAIRE
+============================================================ */
+.rs-form {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+}
+
+.rs-form-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1.2rem 0;
+}
+
+.rs-form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.rs-form-rating {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.rs-rating-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--star-color);
+}
+
+.rs-form-field {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.rs-form-textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  outline: none;
+  resize: vertical;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+  box-sizing: border-box;
+}
+.rs-form-textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.07);
+}
+
+.rs-char-count {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  font-size: 0.72rem;
+  color: #bbb;
+}
+
+.rs-form-actions {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.rs-form-cancel {
+  padding: 0.6rem 1.3rem;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--text);
+  font-size: 0.86rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+}
+.rs-form-cancel:hover {
+  background: #f8f8f8;
+}
+
+.rs-form-submit {
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.25);
+}
+.rs-form-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+.rs-form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* ============================================================
+   HINT LOGIN
+============================================================ */
+.rs-login-hint {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+}
+.rs-login-hint span {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 600;
+}
+.rs-login-hint span:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   LISTE AVIS
+============================================================ */
+.rs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.rs-review-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+.rs-review-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+}
+
+.rs-review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  gap: 1rem;
+}
+
+.rs-reviewer {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.rs-reviewer-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rs-reviewer-name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  margin: 0;
+}
+.rs-review-date {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.rs-review-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.rs-delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+}
+.rs-delete-btn:hover {
+  opacity: 1;
+}
+
+.rs-review-comment {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ============================================================
+   EMPTY / LOADING
+============================================================ */
+.rs-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+}
+.rs-empty-icon {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+.rs-empty-text {
+  font-size: 0.88rem;
+}
+
+.rs-loading {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.rs-skeleton {
+  height: 100px;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ============================================================
+   SPINNERS
+============================================================ */
+.rs-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+.rs-spinner-sm {
+  width: 12px;
+  height: 12px;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-top-color: #666;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 600px) {
+  .rs-review-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .rs-form-actions {
+    flex-direction: column;
+  }
+  .rs-form-cancel,
+  .rs-form-submit {
+    width: 100%;
+    justify-content: center;
+  }
+}

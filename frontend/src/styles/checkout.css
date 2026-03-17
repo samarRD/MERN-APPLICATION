@@ -1,0 +1,374 @@
+/* src/styles/checkout.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --text: #222;
+  --text-muted: #717171;
+  --border: #dddddd;
+  --radius: 12px;
+}
+
+/* ============================================================
+   PAGE
+============================================================ */
+.co-page {
+  min-height: 100vh;
+  background: #fff;
+  font-family: "DM Sans", sans-serif;
+  padding-bottom: 5rem;
+}
+
+.co-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 2rem;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+.co-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.co-back {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  padding: 0.4rem 0.8rem;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+.co-back:hover {
+  background: #f5f5f5;
+}
+
+.co-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+/* ============================================================
+   CONTENT — 2 colonnes
+============================================================ */
+.co-content {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* ============================================================
+   GAUCHE
+============================================================ */
+.co-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.co-section {
+  padding: 1.5rem 0;
+}
+
+.co-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem 0;
+}
+
+/* Voyage */
+.co-trip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.co-trip-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.2rem 0;
+}
+
+.co-trip-value {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.co-edit-btn {
+  background: none;
+  border: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+}
+.co-edit-btn:hover {
+  color: var(--primary);
+}
+
+/* Infos voyageur */
+.co-guest-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.co-guest-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.co-guest-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text);
+  margin: 0 0 0.2rem 0;
+}
+.co-guest-email {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Politique */
+.co-policy-text {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Règles */
+.co-rules {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.co-rules li {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+/* Divider */
+.co-divider {
+  height: 1px;
+  background: var(--border);
+}
+
+/* ✅ Bouton Confirmer et payer */
+.co-pay-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.3);
+}
+.co-pay-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+.co-pay-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.co-terms {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  text-align: center;
+}
+.co-terms-link {
+  text-decoration: underline;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* ============================================================
+   DROITE — Listing card
+============================================================ */
+.co-right {
+  position: sticky;
+  top: 100px;
+}
+
+.co-listing-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  padding: 1.2rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+}
+
+.co-listing-img-wrap {
+  margin: -1.2rem -1.2rem 1rem -1.2rem;
+  height: 200px;
+  overflow: hidden;
+}
+
+.co-listing-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+.co-listing-img:hover {
+  transform: scale(1.03);
+}
+
+.co-listing-info {
+  margin-bottom: 1rem;
+}
+
+.co-listing-type {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  margin: 0 0 0.3rem 0;
+}
+
+.co-listing-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.3rem 0;
+}
+
+.co-listing-location {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Détail prix */
+.co-price-detail {
+  padding: 1rem 0;
+}
+
+.co-price-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 1rem 0;
+}
+
+.co-price-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--text);
+  padding: 0.35rem 0;
+}
+
+.co-price-info {
+  font-size: 0.75rem;
+}
+
+.co-price-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.8rem 0;
+}
+
+.co-price-total {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* Badge sécurité */
+.co-secure-badge {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ============================================================
+   SPINNER
+============================================================ */
+.co-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 900px) {
+  .co-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .co-right {
+    position: static;
+  }
+  .co-listing-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .co-container {
+    padding: 1.5rem 1rem;
+  }
+  .co-title {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,599 @@
+/* src/styles/myBookings.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --text: #222;
+  --text-muted: #888;
+  --border: #eeeeee;
+  --radius: 16px;
+}
+
+.bookings-page {
+  min-height: 100vh;
+  background: #fafafa;
+  font-family: "DM Sans", sans-serif;
+  padding-bottom: 5rem;
+}
+
+.bookings-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+.bookings-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.bookings-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.3rem 0;
+  letter-spacing: -0.5px;
+}
+
+.bookings-subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.bookings-explore-btn {
+  padding: 0.65rem 1.4rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+}
+.bookings-explore-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fff5f5;
+}
+
+.bookings-count {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.bookings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.4rem;
+}
+
+/* BOOKING CARD */
+.booking-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
+  transition: all 0.25s ease;
+}
+.booking-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.09);
+}
+
+.booking-card-img-wrap {
+  position: relative;
+  height: 170px;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.booking-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+.booking-card:hover .booking-card-img {
+  transform: scale(1.05);
+}
+
+.booking-card-status {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0.28rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+}
+
+.booking-card-body {
+  padding: 1.2rem;
+}
+
+.booking-card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.3rem 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.booking-card-location {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0 0 0.9rem 0;
+}
+
+.booking-card-dates {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fafafa;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.7rem 0.9rem;
+  margin-bottom: 0.8rem;
+}
+
+.booking-card-date {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+.booking-card-date-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.booking-card-date-value {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.booking-card-date-arrow {
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.booking-card-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 0.8rem;
+}
+
+.booking-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+.booking-card-nights {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.booking-card-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+}
+.booking-card-price-amount {
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.booking-card-price-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.booking-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.booking-card-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  border: 1.5px solid var(--border);
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+}
+.booking-card-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: #fff5f5;
+}
+
+/* ✅ Bouton annuler */
+.booking-card-cancel-btn {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  background: #fff5f5;
+  border: 1.5px solid #fecaca;
+  border-radius: 9px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ef4444;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  text-align: center;
+}
+.booking-card-cancel-btn:hover {
+  background: #ef4444;
+  border-color: #ef4444;
+  color: #fff;
+}
+
+/* SKELETON */
+.bookings-skeleton {
+  height: 340px;
+  border-radius: var(--radius);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e8e8e8 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease infinite;
+}
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* EMPTY */
+.bookings-empty {
+  text-align: center;
+  padding: 5rem 2rem;
+}
+.bookings-empty-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+.bookings-empty-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.bookings-empty-sub {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+.bookings-empty-btn {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 99px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.25);
+  transition: all 0.2s;
+}
+.bookings-empty-btn:hover {
+  transform: translateY(-1px);
+}
+
+/* ✅ MODAL */
+.bookings-confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: fadeIn 0.2s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bookings-confirm-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.25s ease;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bookings-confirm-icon {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.bookings-confirm-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+.bookings-confirm-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+}
+
+.bookings-confirm-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.bookings-confirm-back {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--text);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+}
+.bookings-confirm-back:hover {
+  background: #f8f8f8;
+  border-color: #ccc;
+}
+
+.bookings-confirm-cancel {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bookings-confirm-cancel:hover:not(:disabled) {
+  background: #dc2626;
+}
+.bookings-confirm-cancel:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.bookings-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .bookings-container {
+    padding: 1.5rem 1rem;
+  }
+  .bookings-title {
+    font-size: 1.6rem;
+  }
+  .bookings-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+  .bookings-confirm-actions {
+    flex-direction: column;
+  }
+}
+
+/* ============================================================
+   ✅ PAIEMENT REQUIS
+============================================================ */
+
+/* Bordure orange sur la carte */
+.booking-card-needs-payment {
+  border: 2px solid #f97316 !important;
+  box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.08) !important;
+}
+
+/* Bannière info */
+.booking-pay-banner {
+  background: linear-gradient(135deg, #fff7ed, #ffedd5);
+  border: 1px solid #fed7aa;
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #c2410c;
+  margin-bottom: 0.9rem;
+  line-height: 1.5;
+}
+
+.booking-pay-banner span {
+  font-weight: 400;
+  color: #9a3412;
+}
+
+/* Bouton Payer maintenant */
+.booking-pay-now-btn {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+  animation: pulse-orange 2s infinite;
+}
+
+.booking-pay-now-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(249, 115, 22, 0.5);
+  animation: none;
+}
+
+.booking-pay-now-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  animation: none;
+}
+
+@keyframes pulse-orange {
+  0%,
+  100% {
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.6);
+  }
+}
+
+/* ============================================================
+   ✅ CARTE PAYÉE
+============================================================ */
+.booking-card-paid {
+  border: 2px solid #22c55e !important;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.08) !important;
+}
+
+/* Overlay vert sur l'image */
+.booking-paid-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #22c55e;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.4);
+}
+
+/* Bannière verte "Réservation payée" */
+.booking-paid-banner {
+  background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+  border: 1px solid #bbf7d0;
+  border-left: 4px solid #22c55e;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: #15803d;
+  margin-bottom: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.booking-paid-banner span {
+  font-weight: 400;
+  color: #166534;
+  font-size: 0.78rem;
+}
+
+/* Bouton Télécharger facture */
+.booking-invoice-btn {
+  flex: 1;
+  padding: 0.72rem 1rem;
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1.5px solid #bbf7d0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.2s;
+}
+.booking-invoice-btn:hover:not(:disabled) {
+  background: #22c55e;
+  color: #fff;
+  border-color: #22c55e;
+  transform: translateY(-1px);
+}
+.booking-invoice-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

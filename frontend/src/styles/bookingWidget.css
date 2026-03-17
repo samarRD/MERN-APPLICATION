@@ -1,0 +1,250 @@
+/* src/styles/bookingWidget.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap");
+
+:root {
+  --primary: #e63946;
+  --primary-dark: #c1121f;
+  --text: #222;
+  --text-muted: #717171;
+  --border: #dddddd;
+  --radius: 12px;
+}
+
+.bw-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 100px;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* ---- Badge mode ---- */
+.bw-mode-header {
+  margin-bottom: 0.8rem;
+}
+
+.bw-mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+.bw-mode-badge.instant {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde68a;
+}
+.bw-mode-badge.manual {
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+/* Prix */
+.bw-price-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  margin-bottom: 1.2rem;
+}
+.bw-price-amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: underline;
+}
+.bw-price-night {
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Dates */
+.bw-dates {
+  display: flex;
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0.8rem;
+}
+
+.bw-date-field {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+}
+.bw-date-field:first-child {
+  border-right: 1px solid var(--border);
+}
+
+.bw-label {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+
+.bw-input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.82rem;
+  font-family: "DM Sans", sans-serif;
+  color: var(--text);
+  background: transparent;
+  cursor: pointer;
+}
+.bw-input-error {
+  color: #ef4444;
+}
+
+.bw-date-arrow {
+  display: none;
+}
+
+.bw-error-msg {
+  font-size: 0.7rem;
+  color: #ef4444;
+  margin: 2px 0 0 0;
+}
+
+/* Conflit */
+.bw-booked-info {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 0.6rem 0.9rem;
+  font-size: 0.82rem;
+  color: #c2410c;
+  margin-bottom: 0.8rem;
+}
+
+/* Résumé */
+.bw-summary {
+  margin-bottom: 1rem;
+}
+.bw-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text);
+  padding: 0.35rem 0;
+}
+.bw-summary-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0;
+}
+.bw-summary-total {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+}
+
+/* ✅ Bouton Réserver — mode instantané (rouge) */
+.bw-reserve-btn {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 14px rgba(230, 57, 70, 0.3);
+}
+.bw-reserve-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(230, 57, 70, 0.4);
+}
+
+/* ✅ Bouton Envoyer demande — mode manuel (bleu) */
+.bw-reserve-btn.manual {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  box-shadow: 0 4px 14px rgba(3, 105, 161, 0.3);
+}
+.bw-reserve-btn.manual:hover:not(:disabled) {
+  box-shadow: 0 6px 20px rgba(3, 105, 161, 0.4);
+}
+
+.bw-reserve-btn:disabled,
+.bw-btn-disabled {
+  background: #ccc !important;
+  box-shadow: none !important;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Mention */
+.bw-secure {
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: underline;
+  margin-bottom: 0;
+}
+
+/* Owner */
+.bw-owner {
+  text-align: center;
+  padding: 0.5rem;
+}
+.bw-owner-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.bw-owner-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.bw-owner-mode {
+  margin-bottom: 1rem;
+}
+.bw-owner-btn {
+  padding: 0.65rem 1.4rem;
+  background: #fff5f5;
+  border: 1.5px solid #fecaca;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  font-family: "DM Sans", sans-serif;
+  transition: all 0.2s;
+}
+.bw-owner-btn:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Spinner */
+.bw-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
